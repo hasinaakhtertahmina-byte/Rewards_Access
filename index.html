@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Promotional Gateway | Verified Access</title>
+    <style>
+        /* ENHANCED MINIMALIST DESIGN SYSTEM
+           Color Palette: Muted Teal, Soft Slate, and Ivory
+        */
+        :root {
+            --bg-color: #1a2a2f;
+            --bg-gradient: linear-gradient(135deg, #1a2a2f 0%, #0f1a1d 50%, #1a2a2f 100%);
+            --card-bg: #24353a;
+            --card-bg-hover: #2d4248;
+            --accent: #7dd3c8;
+            --accent-dim: #5ba99e;
+            --text-main: #e2e8e4;
+            --text-dim: #a0b1ad;
+            --text-bright: #ffffff;
+            --white: #ffffff;
+            --border: rgba(255, 255, 255, 0.1);
+            --border-accent: rgba(125, 211, 200, 0.3);
+            --success: #4ade80;
+            --success-dim: #22c55e;
+            --warning: #fbbf24;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.4);
+            --shadow-glow: 0 0 30px rgba(125, 211, 200, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--text-main);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* VISUAL PROGRESS INDICATOR */
+        .progress-tracker {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            margin: 30px auto 40px;
+            max-width: 400px;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step-circle {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .step-circle.active {
+            background: var(--accent);
+            color: var(--bg-color);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .step-circle.inactive {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-dim);
+            border: 2px dashed rgba(255, 255, 255, 0.2);
+        }
+
+        .step-circle.completed {
+            background: var(--success);
+            color: var(--bg-color);
+        }
+
+        .step-circle.completed::after {
+            content: "✓";
+            font-size: 1rem;
+        }
+
+        .step-label {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            transition: var(--transition);
+        }
+
+        .step-label.active {
+            color: var(--text-bright);
+            font-weight: 500;
+        }
+
+        .progress-line {
+            width: 60px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 0 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-line::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0;
+            background: var(--accent);
+            transition: width 0.6s ease;
+        }
+
+        #verify-check:checked ~ .progress-tracker .progress-line::after {
+            width: 100%;
+        }
+
+        #verify-check:checked ~ .progress-tracker .step-circle:first-of-type {
+            background: var(--success);
+            color: var(--bg-color);
+        }
+
+        #verify-check:checked ~ .progress-tracker .step-circle:first-of-type::after {
+            content: "✓";
+        }
+
+        #verify-check:checked ~ .progress-tracker .step-circle:last-of-type {
+            background: var(--accent);
+            color: var(--bg-color);
+            border: none;
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* TYPOGRAPHY */
+        h1 {
+            font-weight: 300;
+            font-size: 2.4rem;
+            letter-spacing: -0.5px;
+            margin-bottom: 15px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        h2 {
+            font-weight: 500;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--text-bright);
+        }
+
+        h3 {
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: var(--text-dim);
+            font-size: 1rem;
+        }
+
+        .center { text-align: center; }
+
+        /* ENHANCED HUMAN VERIFICATION SECTION */
+        .verify-section {
+            background: var(--card-bg);
+            padding: 35px 30px;
+            border-radius: 16px;
+            margin: 40px 0;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .verify-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-dim), var(--accent));
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        #verify-check:checked ~ .verify-section::before,
+        .verify-section:has(#verify-check:checked)::before {
+            opacity: 1;
+        }
+
+        .verify-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .verify-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-bright);
+            margin-bottom: 8px;
+        }
+
+        .verify-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        /* REALISTIC CAPTCHA-STYLE CHECKBOX */
+        .captcha-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+
+        .captcha-box:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .custom-checkbox {
+            position: relative;
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+        }
+
+        #verify-check {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .checkbox-visual {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 28px;
+            height: 28px;
+            background: var(--white);
+            border-radius: 4px;
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .checkbox-visual::after {
+            content: "";
+            width: 8px;
+            height: 14px;
+            border: solid var(--bg-color);
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg) scale(0);
+            transition: transform 0.2s ease;
+            margin-bottom: 4px;
+        }
+
+        #verify-check:checked + .checkbox-visual {
+            background: var(--success);
+            border-color: var(--success);
+        }
+
+        #verify-check:checked + .checkbox-visual::after {
+            transform: rotate(45deg) scale(1);
+        }
+
+        #verify-check:focus + .checkbox-visual {
+            box-shadow: 0 0 0 3px rgba(125, 211, 200, 0.3);
+        }
+
+        .checkbox-label {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .checkbox-label-main {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        .checkbox-label-sub {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+
+        /* TRUST BADGES */
+        .trust-badges {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+        }
+
+        /* PURE CSS ICONS */
+        .icon-shield {
+            width: 16px;
+            height: 18px;
+            position: relative;
+        }
+
+        .icon-shield::before {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 14px;
+            background: var(--accent);
+            border-radius: 2px 2px 8px 8px;
+            top: 0;
+        }
+
+        .icon-shield::after {
+            content: "";
+            position: absolute;
+            width: 6px;
+            height: 8px;
+            border: 2px solid var(--bg-color);
+            border-radius: 1px;
+            top: 4px;
+            left: 5px;
+            border-top: none;
+        }
+
+        .icon-lock {
+            width: 14px;
+            height: 18px;
+            position: relative;
+        }
+
+        .icon-lock::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 8px;
+            border: 2px solid var(--accent);
+            border-bottom: none;
+            border-radius: 6px 6px 0 0;
+            top: 0;
+            left: 2px;
+        }
+
+        .icon-lock::after {
+            content: "";
+            position: absolute;
+            width: 14px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 2px;
+            bottom: 0;
+        }
+
+        .icon-check-circle {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--accent);
+            position: relative;
+        }
+
+        .icon-check-circle::after {
+            content: "";
+            position: absolute;
+            width: 4px;
+            height: 8px;
+            border: solid var(--bg-color);
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+            top: 2px;
+            left: 5px;
+        }
+
+        .icon-globe {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            position: relative;
+        }
+
+        .icon-globe::before {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background: var(--accent);
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+        }
+
+        .icon-globe::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: var(--accent);
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        /* VERIFICATION STATUS */
+        .verify-status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.2);
+            border-radius: 6px;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .verify-status-icon {
+            width: 8px;
+            height: 8px;
+            background: var(--warning);
+            border-radius: 50%;
+            animation: pulse-warning 2s infinite;
+        }
+
+        @keyframes pulse-warning {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .verify-status-text {
+            font-size: 0.85rem;
+            color: var(--warning);
+            font-weight: 500;
+        }
+
+        /* Verified state */
+        #verify-check:checked ~ .verify-section .verify-status {
+            background: rgba(74, 222, 128, 0.1);
+            border-color: rgba(74, 222, 128, 0.2);
+        }
+
+        #verify-check:checked ~ .verify-section .verify-status-icon {
+            background: var(--success);
+            animation: none;
+        }
+
+        #verify-check:checked ~ .verify-section .verify-status-text {
+            color: var(--success);
+        }
+
+        /* PREMIUM BUTTON DESIGN */
+        .button-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            opacity: 0.25;
+            pointer-events: none;
+            filter: grayscale(1);
+            transition: var(--transition);
+        }
+
+        #verify-check:checked ~ .verify-section .button-stack {
+            opacity: 1;
+            pointer-events: auto;
+            filter: grayscale(0);
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+            background: linear-gradient(180deg, var(--white) 0%, #f8f9fa 100%);
+            color: var(--bg-color);
+            padding: 16px 30px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+            transition: var(--transition);
+            border: none;
+            box-shadow: 
+                0 1px 0 rgba(255, 255, 255, 0.1) inset,
+                0 4px 12px rgba(0, 0, 0, 0.15),
+                0 1px 3px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover {
+            background: linear-gradient(180deg, var(--accent) 0%, var(--accent-dim) 100%);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 
+                0 8px 25px rgba(125, 211, 200, 0.3),
+                0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-flag {
+            font-size: 1.2rem;
+        }
+
+        .btn-arrow {
+            font-size: 0.9rem;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: var(--transition);
+        }
+
+        .btn:hover .btn-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ALTERNATE BUTTON STYLE FOR SECONDARY ACTIONS */
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--border-accent);
+            color: var(--accent);
+            box-shadow: none;
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: var(--bg-color);
+            border-color: var(--accent);
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 50px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .benefits-list li {
+            margin-bottom: 12px;
+            padding-left: 28px;
+            position: relative;
+            color: var(--text-dim);
+        }
+
+        .benefits-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 6px;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        /* HOW IT WORKS */
+        .steps {
+            display: grid;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .step-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: var(--border-accent);
+        }
+
+        .step-num {
+            color: var(--accent);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        .step-num::before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            background: rgba(125, 211, 200, 0.15);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step-card:nth-child(1) .step-num::before { content: "1"; }
+        .step-card:nth-child(2) .step-num::before { content: "2"; }
+        .step-card:nth-child(3) .step-num::before { content: "3"; }
+
+        /* FAQ ACCORDION */
+        .faq-item {
+            margin-bottom: 8px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            border-color: var(--border-accent);
+        }
+
+        .faq-input { display: none; }
+
+        .faq-label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 20px;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        .faq-label:hover { 
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .faq-arrow {
+            font-size: 0.8rem;
+            color: var(--accent);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-input:checked + .faq-label .faq-arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-content {
+            max-height: 0;
+            padding: 0 20px;
+            overflow: hidden;
+            color: var(--text-dim);
+            transition: all 0.4s ease;
+        }
+
+        .faq-input:checked + .faq-label + .faq-content {
+            max-height: 300px;
+            padding: 0 20px 18px;
+        }
+
+        /* TESTIMONIALS */
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 15px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-main);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .author-avatar {
+            width: 36px;
+            height: 36px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--bg-color);
+            font-size: 0.85rem;
+        }
+
+        .author-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .author-name {
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        .author-verified {
+            font-size: 0.75rem;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 50px 0;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        .footer-logo {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-main);
+            margin-bottom: 15px;
+        }
+
+        .disclaimer {
+            margin-top: 25px;
+            font-size: 0.75rem;
+            opacity: 0.7;
+            border-top: 1px solid var(--border);
+            padding-top: 25px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .footer-badges {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.3rem; }
+            .container { padding: 20px 15px; }
+            .verify-section { padding: 25px 20px; }
+            .progress-tracker { transform: scale(0.9); }
+            .trust-badges { gap: 15px; }
+            .btn { padding: 14px 24px; font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- PROGRESS INDICATOR -->
+        <div class="progress-tracker">
+            <div class="progress-step">
+                <div class="step-circle active" id="step1-circle">1</div>
+                <span class="step-label active" id="step1-label">Verify</span>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step">
+                <div class="step-circle inactive" id="step2-circle">2</div>
+                <span class="step-label" id="step2-label">Access</span>
+            </div>
+        </div>
+
+        <header class="center">
+            <h1>Verified Gateway Access</h1>
+            <p>Welcome. Please complete the security verification below to view current promotional availability in your region.</p>
+        </header>
+
+        <!-- ENHANCED VERIFICATION SECTION -->
+        <input type="checkbox" id="verify-check" style="position: absolute; opacity: 0; pointer-events: none;">
+        
+        <div class="verify-section">
+            <div class="verify-header">
+                <div class="verify-title">Security Verification Required</div>
+                <div class="verify-subtitle">This helps us ensure a secure experience for all users</div>
+            </div>
+
+            <div class="verify-status">
+                <div class="verify-status-icon"></div>
+                <span class="verify-status-text">Verification Required to Continue</span>
+            </div>
+
+            <div class="captcha-box">
+                <label class="checkbox-wrapper">
+                    <div class="custom-checkbox">
+                        <input type="checkbox" id="verify-check-main" onclick="document.getElementById('verify-check').click(); this.checked = document.getElementById('verify-check').checked;">
+                        <div class="checkbox-visual"></div>
+                    </div>
+                    <div class="checkbox-label">
+                        <span class="checkbox-label-main">I am a human visitor</span>
+                        <span class="checkbox-label-sub">Confirm you are not an automated bot</span>
+                    </div>
+                </label>
+            </div>
+
+            <div class="button-stack">
+                <a href="https://www.mouseflyby.courses/?sl=6077778-98075&pub_click_id={External_ID_from_traffic_source}&site={subID}&pub_sub_id={sub_subID}" class="btn">
+                    <span class="btn-flag">🇺🇸</span>
+                    <span>United States</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+                <a href="https://www.mouseflyby.courses/?sl=6077778-98075&pub_click_id={External_ID_from_traffic_source}&site={subID}&pub_sub_id={sub_subID}" class="btn">
+                    <span class="btn-flag">🇬🇧</span>
+                    <span>United Kingdom</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+                <a href="https://www.mouseflyby.courses/?sl=6077778-98075&pub_click_id={External_ID_from_traffic_source}&site={subID}&pub_sub_id={sub_subID}" class="btn">
+                    <span class="btn-flag">🇫🇷</span>
+                    <span>France</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+                <a href="https://www.mouseflyby.courses/?sl=6077778-98075&pub_click_id={External_ID_from_traffic_source}&site={subID}&pub_sub_id={sub_subID}" class="btn btn-secondary">
+                    <span class="btn-flag">🌍</span>
+                    <span>Other Countries</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+            </div>
+
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <div class="icon-shield"></div>
+                    <span>Secure Connection</span>
+                </div>
+                <div class="trust-badge">
+                    <div class="icon-lock"></div>
+                    <span>256-bit SSL</span>
+                </div>
+                <div class="trust-badge">
+                    <div class="icon-check-circle"></div>
+                    <span>Verified Partner</span>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <h2>Why Verification Matters</h2>
+            <p>Our gateway ensures that promotional opportunities reach genuine users. This verification process helps maintain the integrity of our partner offers and provides you with the most relevant content for your region.</p>
+            <ul class="benefits-list">
+                <li>Regional content tailored specifically to your location</li>
+                <li>Secure redirection to verified partner platforms</li>
+                <li>Privacy-focused navigation without intrusive tracking</li>
+                <li>Direct access to limited promotional opportunities</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step-card">
+                    <span class="step-num">Regional Selection</span>
+                    <h3>Select Your Location</h3>
+                    <p>Choose your physical location from the regional options. This ensures the promotional content is compatible with your location and local regulations.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">Partner Matching</span>
+                    <h3>Smart Matching System</h3>
+                    <p>Our system analyzes current availability and matches you with a promotional partner that best fits your regional profile and eligibility.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">Direct Access</span>
+                    <h3>Seamless Redirect</h3>
+                    <p>Once matched, you will be redirected to the destination website where you can review the complete offer details and terms.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Professional Standards</h2>
+            <p>Finding trustworthy promotional content in today's digital landscape can be challenging. This gateway was designed to provide a transparent, user-focused experience without aggressive marketing tactics.</p>
+            <p>We maintain high standards across the United States, United Kingdom, and France, while striving to provide consistent access for all regions. Availability depends on partner criteria and regional eligibility requirements.</p>
+        </section>
+
+        <section>
+            <h2 class="center">User Experiences</h2>
+            <div style="margin-top: 30px;">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The verification process was straightforward and the interface was refreshingly clean. No flashing banners or confusing pop-ups. Found exactly what I needed through the UK portal."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JA</div>
+                        <div class="author-info">
+                            <span class="author-name">James Anderson</span>
+                            <span class="author-verified"><div class="icon-check-circle" style="width:12px;height:12px;"></div> Verified Visitor</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"A calm and professional experience. The redirect was instant and secure. This is how all promotional pages should operate – with respect for the user."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ER</div>
+                        <div class="author-info">
+                            <span class="author-name">Elena Rousseau</span>
+                            <span class="author-verified"><div class="icon-check-circle" style="width:12px;height:12px;"></div> Verified Visitor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="center" style="margin-bottom: 25px;">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <input type="checkbox" id="faq1" class="faq-input">
+                <label for="faq1" class="faq-label">
+                    <span>Why is location verification required?</span>
+                    <span class="faq-arrow">▼</span>
+                </label>
+                <div class="faq-content">
+                    <p>Different regions have varying regulations and promotional availability. Confirming your location ensures we connect you with offers that are relevant and compliant with local requirements.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <input type="checkbox" id="faq2" class="faq-input">
+                <label for="faq2" class="faq-label">
+                    <span>Is my personal information stored?</span>
+                    <span class="faq-arrow">▼</span>
+                </label>
+                <div class="faq-content">
+                    <p>This landing page does not collect or store personal data. We simply facilitate a secure connection to partner websites based on your regional selection.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <input type="checkbox" id="faq3" class="faq-input">
+                <label for="faq3" class="faq-label">
+                    <span>What if my country is not listed?</span>
+                    <span class="faq-arrow">▼</span>
+                </label>
+                <div class="faq-content">
+                    <p>Select "Other Countries" to access our global promotional catalog. Our system will match you with offers available in your specific location.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <input type="checkbox" id="faq4" class="faq-input">
+                <label for="faq4" class="faq-label">
+                    <span>How quickly will I be redirected?</span>
+                    <span class="faq-arrow">▼</span>
+                </label>
+                <div class="faq-content">
+                    <p>Redirection is typically instant. Once you select your region, you will be connected to our partner platform within seconds.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="center" style="border: none;">
+            <h2>Ready to Proceed?</h2>
+            <p style="margin-bottom: 25px;">Complete the verification above to unlock regional access.</p>
+            <div class="trust-badges" style="justify-content: center; margin-bottom: 30px;">
+                <div class="trust-badge">
+                    <div class="icon-globe"></div>
+                    <span>Global Access</span>
+                </div>
+                <div class="trust-badge">
+                    <div class="icon-shield"></div>
+                    <span>Secure Portal</span>
+                </div>
+                <div class="trust-badge">
+                    <div class="icon-check-circle"></div>
+                    <span>Instant Access</span>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-logo">Global Gateway</div>
+            <p>Connecting users with verified promotional opportunities worldwide.</p>
+            
+            <div class="footer-badges">
+                <div class="footer-badge">
+                    <div class="icon-lock" style="width:12px;height:14px;"></div>
+                    <span>SSL Secured</span>
+                </div>
+                <div class="footer-badge">
+                    <div class="icon-shield" style="width:14px;height:16px;"></div>
+                    <span>Privacy Protected</span>
+                </div>
+                <div class="footer-badge">
+                    <div class="icon-check-circle" style="width:12px;height:12px;"></div>
+                    <span>Verified Partners</span>
+                </div>
+            </div>
+            
+            <div class="disclaimer">
+                This page contains promotional content and may redirect to partner websites. Participation is voluntary. Availability is subject to partner terms and regional eligibility. We are committed to providing a transparent and secure user experience.
+            </div>
+            
+            <p style="margin-top: 25px; opacity: 0.6;">© 2026 Global Gateway. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
